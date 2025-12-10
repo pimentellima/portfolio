@@ -12,7 +12,7 @@ import {
 } from "lucide-react"
 import NavItem from "./navitem"
 
-export default function Navbar() {
+export default function Header() {
     return (
         <nav className="bg-black h-26 grid grid-rows-2 flex-col px-10 w-full border-b">
             <div className="flex items-end justify-between">

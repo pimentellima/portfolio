@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
-import Navbar from "@/components/navbar"
+import Header from "@/components/header"
 import { ProgressBar, ProgressBarProvider } from "react-transition-progress"
 
 const geistSans = Geist({
@@ -32,8 +32,8 @@ export default function RootLayout({
                 <ProgressBarProvider>
                     <ProgressBar className="w-full fixed top-0 left-0 right-0 z-50 h-1 bg-primary/50" />
                     <div className="flex min-h-screen flex-col bg-background">
-                        <Navbar />
-                        {children}
+                        <Header />
+                        <div className="flex-1 py-10">{children}</div>
                     </div>
                 </ProgressBarProvider>
             </body>
