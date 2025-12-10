@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
+import Navbar from "@/components/navbar"
+import { ProgressBar, ProgressBarProvider } from "react-transition-progress"
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -27,7 +29,13 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                {children}
+                <ProgressBarProvider>
+                    <ProgressBar className="w-full fixed top-0 left-0 right-0 z-50 h-1 bg-primary/50" />
+                    <div className="flex min-h-screen flex-col bg-background">
+                        <Navbar />
+                        {children}
+                    </div>
+                </ProgressBarProvider>
             </body>
         </html>
     )
