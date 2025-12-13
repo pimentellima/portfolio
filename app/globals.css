@@ -226,6 +226,6 @@ body {
 
 @layer base {
     * {
-        @apply border-border bg-scroll;
+        @apply border-border bg-scroll text-foreground;
     }
 }
