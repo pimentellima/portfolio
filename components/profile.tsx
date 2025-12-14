@@ -9,7 +9,7 @@ export default function Profile() {
         <div className="flex gap-3 flex-col">
             <div className="flex gap-3 md:flex-col">
                 <Image
-                    src="https://avatars.githubusercontent.com/u/92494670"
+                    src="/image.jpg"
                     alt="Profile photo"
                     width={350}
                     height={350}
