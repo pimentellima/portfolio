@@ -1,20 +1,18 @@
-import { Link } from "react-transition-progress/next"
-import { Button } from "./ui/button"
 import {
-    BookAIcon,
-    BookIcon,
-    BookKeyIcon,
     BookOpen,
-    Grid2x2,
     InboxIcon,
     MailIcon,
     SquareChartGantt,
+    SquareCodeIcon,
+    SquareStackIcon,
 } from "lucide-react"
+import { Link } from "react-transition-progress/next"
 import NavItem from "./navitem"
+import { Button } from "./ui/button"
 
 export default function Header() {
     return (
-        <nav className="bg-black h-26 grid grid-rows-2 flex-col px-10 w-full border-b">
+        <nav className="h-26 grid grid-rows-2 flex-col px-10 w-full border-b bg-black">
             <div className="flex items-end justify-between">
                 <div>
                     <span className="text-xl">🎯</span>
@@ -27,7 +25,7 @@ export default function Header() {
                         <Button variant={"outline"}>
                             <InboxIcon />
                         </Button>
-                        <div className="rounded-full bg-primary h-2 w-2 absolute -right-0.5 -top-0.5"/>
+                        <div className="rounded-full bg-primary h-2 w-2 absolute -right-0.5 -top-0.5" />
                     </div>
                 </div>
             </div>
@@ -37,6 +35,11 @@ export default function Header() {
                     icon={<SquareChartGantt />}
                     href="/projects"
                     label="Projetos"
+                />
+                <NavItem
+                    icon={<SquareCodeIcon />}
+                    href="/stack"
+                    label="Stack"
                 />
                 <NavItem icon={<MailIcon />} href="/contact" label="Contato" />
             </div>

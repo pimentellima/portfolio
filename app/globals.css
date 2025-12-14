@@ -45,7 +45,7 @@
 
 :root {
     --background: oklch(0.1763 0.014 258.3572);
-    --foreground: oklch(0.8569 0.0141 247.9925);
+    --foreground: oklch(93.439% 0.00773 242.062);
     --card: oklch(0.1763 0.014 258.3572);
     --card-foreground: oklch(0.8569 0.0141 247.9925);
     --popover: oklch(0.1763 0.014 258.3572);
@@ -221,11 +221,13 @@
 
 body {
     letter-spacing: var(--tracking-normal);
+    background-color: var(--background);
+    color: var(--foreground);
 }
 
 
 @layer base {
     * {
-        @apply border-border bg-scroll text-foreground;
+        @apply border-border bg-scroll;
     }
 }
