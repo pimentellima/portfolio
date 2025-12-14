@@ -40,7 +40,7 @@ export default function NotificationDropdown() {
             </div>
             <DropdownMenuContent align="end" className="p-2 rounded-lg w-max">
                 <DropdownMenuItem className="focus:bg-secondary/40 bg-secondary/40 focus:text-foreground text-foreground font-semibold">
-                    Matheus Pimentel está disponível para trabalho
+                    Matheus está disponível para trabalho
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
