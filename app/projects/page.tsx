@@ -1,9 +1,7 @@
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
-import { formatDistanceToNow } from "date-fns"
-import { ptBR } from "date-fns/locale"
+import ProjectSearch from "./components/project-search"
+import ProjectsList from "./components/projects-list"
 
 const projects = [
     {
@@ -79,66 +77,11 @@ export default function ProjectsPage() {
     return (
         <div className="space-y-4">
             <div className="flex gap-2">
-                <Input
-                    className="border-border h-8"
-                    placeholder="Buscar projeto..."
-                />
+                <ProjectSearch />
                 <Button variant={"secondary"}>Filtrar por...</Button>
             </div>
             <Separator className="my-3" />
-            {projects
-                .sort(
-                    (a, b) =>
-                        new Date(b.date).getTime() - new Date(a.date).getTime()
-                )
-                .map((project) => (
-                    <div
-                        key={project.name}
-                        className="py-4 border-b last:border-b-0"
-                    >
-                        <div className="flex items-center gap-3">
-                            <p className="text-primary font-bold text-xl">
-                                {project.name}
-                            </p>
-                            <Badge className="h-6" variant={"outline"}>
-                                {project.type}
-                            </Badge>
-                        </div>
-                        <p className="text-muted-foreground text-sm font-medium mt-2">
-                            {project.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2 mt-4">
-                            {project.skills?.map((skill) => (
-                                <Badge
-                                    key={skill}
-                                    className="h-6 bg-primary/10 text-primary"
-                                    variant={"secondary"}
-                                >
-                                    {skill}
-                                </Badge>
-                            ))}
-                        </div>
-                        <div className="flex gap-4 flex-wrap mt-4">
-                            <div className="flex items-center gap-1">
-                                <span
-                                    className="h-3 w-3 rounded-full border-muted-foreground/50 border"
-                                    style={{
-                                        backgroundColor: project.languageColor,
-                                    }}
-                                />
-                                <p className="text-xs text-muted-foreground font-semibold">
-                                    {project.language}
-                                </p>
-                            </div>
-                            <p className="text-xs text-muted-foreground font-semibold">
-                                {formatDistanceToNow(new Date(project.date), {
-                                    addSuffix: true,
-                                    locale: ptBR,
-                                })}
-                            </p>
-                        </div>
-                    </div>
-                ))}
+            <ProjectsList projects={projects} />
         </div>
     )
 }
