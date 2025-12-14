@@ -9,11 +9,11 @@ export default function Profile() {
         <div className="flex gap-3 flex-col">
             <div className="flex gap-3 md:flex-col">
                 <Image
-                    src="/image.jpeg"
+                    src="https://avatars.githubusercontent.com/u/92494670"
                     alt="Profile photo"
                     width={350}
                     height={350}
-                    className="rounded-full ring-2 ring-border h-16 w-16 md:h-72 md:w-72"
+                    className="rounded-full ring-2 ring-border h-16 w-16 md:h-72 md:w-72 object-cover object-top"
                 />
                 <div className="md:space-y-1">
                     <h1 className="text-foreground text-2xl font-bold tracking-tight">
