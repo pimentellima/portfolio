@@ -28,11 +28,11 @@ export default function Home() {
     return (
         <div className="contents">
             <div className="rounded-lg border w-full py-6 px-4 text-foreground">
-                <div className="text-xs text-foreground tracking-tight flex font-mono">
+                <div className="text-xs text-foreground tracking-tight flex font-medium font-mono">
                     <p>pimentellima / README</p>
                     <span className="text-muted-foreground">.md</span>
                 </div>
-                <div className="font-semibold mt-2 text-xl">Sobre mim</div>
+                <div className="font-bold mt-2 text-xl">Sobre mim</div>
                 <Separator className="my-2" />
                 <div className="font-medium text-sm">
                     Sou um desenvolvedor full stack brasileiro 🇧🇷 que ama
