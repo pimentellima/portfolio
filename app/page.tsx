@@ -60,8 +60,8 @@ export default function Home() {
                         <Collapsible defaultOpen>
                             <div className="space-y-3">
                                 <div className="flex items-center gap-2">
-                                    <CollapsibleTrigger className="flex gap-1 items-center group">
-                                        <p className="text-base text-foreground group-hover:text-primary transition-colors font-semibold cursor-pointer">
+                                    <CollapsibleTrigger className="flex gap-1 items-center group cursor-pointer w-full">
+                                        <p className="text-base text-foreground group-hover:text-primary transition-colors font-semibold">
                                             Atuou como Tech Lead no Econosonar
                                         </p>
                                         <ChevronsUpDownIcon className="size-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
@@ -85,8 +85,8 @@ export default function Home() {
                     >
                         <Collapsible defaultOpen>
                             <div className="space-y-3">
-                                <CollapsibleTrigger className="flex gap-1 items-center group">
-                                    <p className="text-base text-foreground group-hover:text-primary transition-colors font-semibold cursor-pointer">
+                                <CollapsibleTrigger className="flex gap-1 items-center group cursor-pointer w-full">
+                                    <p className="text-base text-foreground group-hover:text-primary transition-colors font-semibold">
                                         Publicou projetos pessoais
                                     </p>
                                     <ChevronsUpDownIcon className="size-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
@@ -112,8 +112,8 @@ export default function Home() {
                     >
                         <Collapsible defaultOpen>
                             <div className="space-y-3">
-                                <CollapsibleTrigger className="flex gap-1 items-center group">
-                                    <p className="text-base text-foreground group-hover:text-primary font-semibold cursor-pointer">
+                                <CollapsibleTrigger className="flex gap-1 items-center group cursor-pointer w-full">
+                                    <p className="text-base text-foreground group-hover:text-primary font-semibold">
                                         Iniciou atuação como Desenvolvedor
                                         React.js e Node.js na DpSystem
                                     </p>
@@ -140,8 +140,8 @@ export default function Home() {
                     >
                         <Collapsible defaultOpen>
                             <div className="space-y-2">
-                                <CollapsibleTrigger className="flex gap-1 items-center group">
-                                    <p className="text-base text-foreground group-hover:text-primary font-semibold cursor-pointer">
+                                <CollapsibleTrigger className="flex gap-1 items-center group cursor-pointer w-full">
+                                    <p className="text-base text-foreground group-hover:text-primary font-semibold">
                                         Começou a desenvolver projetos em React.js
                                         e Node.js
                                     </p>
