@@ -19,6 +19,7 @@ export default function NavItem({
         <div className="flex flex-col gap-1.5">
             <Link href={href}>
                 <Button
+                    size={'sm'}
                     data-active={isActive}
                     variant={"ghost"}
                     className="data-[active=true]:font-semibold font-normal"
