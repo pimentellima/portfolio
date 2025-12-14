@@ -42,9 +42,9 @@ export default function Home() {
                     Desde 2023, trabalho desenvolvendo aplicações web usando{" "}
                     <span className="font-semibold">TypeScript</span>,{" "}
                     <span className="font-semibold">React.js</span> e{" "}
-                    <span className="font-semibold">Node.js</span>.
-                    Também desenvolvo projetos autorais para explorar novas
-                    ideias e tecnologias.
+                    <span className="font-semibold">Node.js</span>. Também
+                    desenvolvo projetos autorais para explorar novas ideias e
+                    tecnologias.
                 </div>
             </div>
 
@@ -68,7 +68,10 @@ export default function Home() {
                                 </div>
 
                                 <CollapsibleContent className="space-y-2">
-                                    <TimelineWork name="econosonar" />
+                                    <TimelineWork
+                                        href="https://www.econosonar.com"
+                                        name="econosonar"
+                                    />
                                     <TimelineWorkActivity content="ajudou a tirar a ideia do papel, desenvolvendo a plataforma de análise de eventos econômicos" />
                                     <TimelineWorkActivity content="criou o workflow de análise periódica de notícias e agrupamento com IA e métricas personalizadas" />
                                     <TimelineWorkActivity content="construiu o painel de administradores para visualização das tabelas geradas no banco" />
@@ -141,8 +144,8 @@ export default function Home() {
                             <div className="space-y-2">
                                 <CollapsibleTrigger className="flex gap-1 items-center group cursor-pointer w-full">
                                     <p className="text-base text-foreground group-hover:text-primary font-semibold text-left">
-                                        Começou a desenvolver projetos em React.js
-                                        e Node.js
+                                        Começou a desenvolver projetos em
+                                        React.js e Node.js
                                     </p>
                                     <ChevronsUpDownIcon className="hidden md:block size-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
                                 </CollapsibleTrigger>

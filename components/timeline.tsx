@@ -110,11 +110,19 @@ export function TimelineProject({ name }: { name: string }) {
     )
 }
 
-export function TimelineWork({ name }: { name: string }) {
+export function TimelineWork({ name, href }: { name: string; href?: string }) {
+    if (!href)
+        return (
+            <div className="text-sm text-muted-foreground">
+                {name}
+            </div>
+        )
     return (
         <div>
             <Link
-                href={`/${name}`}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-muted-foreground hover:underline"
             >
                 {name}
