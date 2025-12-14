@@ -126,7 +126,7 @@ export function TimelineWork({ name }: { name: string }) {
 export function TimelineWorkActivity({ content }: { content: string }) {
     return (
         <div className="flex items-center gap-2">
-            <GitPullRequest className="h-4 w-4 text-muted-foreground" />
+            <GitPullRequest className="h-4 w-4 text-muted-foreground shrink-0" />
             <p className="text-sm text-foreground">{content}</p>
         </div>
     )

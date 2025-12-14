@@ -9,19 +9,17 @@ import {
 import { Link } from "react-transition-progress/next"
 import NavItem from "./navitem"
 import { Button } from "./ui/button"
+import { Badge } from "./ui/badge"
 
 export default function Header() {
     return (
-        <nav className="h-26 grid grid-rows-2 flex-col px-10 w-full border-b bg-black">
+        <nav className="h-26 grid grid-rows-2 flex-col px-4 w-full border-b bg-black">
             <div className="flex items-end justify-between">
-                <div className="flex items-center gap-0.5">
-                    <span className="text-xl">🎯</span>
-                    <Link href={"/"}>
-                        <Button size={"sm"} variant={"ghost"}>
-                            pimentellima
-                        </Button>
-                    </Link>
-                </div>
+                <Link href={"/"}>
+                    <Button size={"sm"} variant={"ghost"}>
+                        🎯 pimentellima
+                    </Button>
+                </Link>
                 <div>
                     <div className="relative">
                         <Button variant={"outline"}>
@@ -32,17 +30,16 @@ export default function Header() {
                 </div>
             </div>
             <div className="flex items-end ">
-                <NavItem icon={<BookOpen />} href="/" label="Resumo" />
-                <NavItem
-                    icon={<SquareChartGantt />}
-                    href="/projects"
-                    label="Projetos"
-                />
-                <NavItem
-                    icon={<SquareCodeIcon />}
-                    href="/stack"
-                    label="Stack"
-                />
+                <NavItem icon={<BookOpen />} href="/">
+                    Resumo
+                </NavItem>
+                <NavItem icon={<SquareChartGantt />} href="/projects">
+                    Projetos
+                    <Badge variant={'secondary'} className="font-bold px-1 py-0">7</Badge>
+                </NavItem>
+                <NavItem icon={<SquareCodeIcon />} href="/stack">
+                    Stack
+                </NavItem>
             </div>
         </nav>
     )

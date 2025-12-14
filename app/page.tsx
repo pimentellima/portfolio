@@ -43,7 +43,6 @@ export default function Home() {
                     <span className="font-semibold">TypeScript</span>,{" "}
                     <span className="font-semibold">React.js</span> e{" "}
                     <span className="font-semibold">Node.js</span>.
-                    <br />
                     Também desenvolvo projetos autorais para explorar novas
                     ideias e tecnologias.
                 </div>
@@ -61,10 +60,10 @@ export default function Home() {
                             <div className="space-y-3">
                                 <div className="flex items-center gap-2">
                                     <CollapsibleTrigger className="flex gap-1 items-center group cursor-pointer w-full">
-                                        <p className="text-base text-foreground group-hover:text-primary transition-colors font-semibold">
+                                        <p className="text-base text-foreground group-hover:text-primary transition-colors font-semibold text-left">
                                             Atuou como Tech Lead no Econosonar
                                         </p>
-                                        <ChevronsUpDownIcon className="size-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
+                                        <ChevronsUpDownIcon className="hidden md:block size-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
                                     </CollapsibleTrigger>
                                 </div>
 
@@ -86,10 +85,10 @@ export default function Home() {
                         <Collapsible defaultOpen>
                             <div className="space-y-3">
                                 <CollapsibleTrigger className="flex gap-1 items-center group cursor-pointer w-full">
-                                    <p className="text-base text-foreground group-hover:text-primary transition-colors font-semibold">
+                                    <p className="text-base text-foreground group-hover:text-primary transition-colors font-semibold text-left">
                                         Publicou projetos pessoais
                                     </p>
-                                    <ChevronsUpDownIcon className="size-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
+                                    <ChevronsUpDownIcon className="hidden md:block size-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
                                 </CollapsibleTrigger>
                                 <CollapsibleContent className="space-y-2">
                                     <TimelineProject name="pimentellima/smulti" />
@@ -113,11 +112,11 @@ export default function Home() {
                         <Collapsible defaultOpen>
                             <div className="space-y-3">
                                 <CollapsibleTrigger className="flex gap-1 items-center group cursor-pointer w-full">
-                                    <p className="text-base text-foreground group-hover:text-primary font-semibold">
+                                    <p className="text-base text-foreground group-hover:text-primary font-semibold text-left">
                                         Iniciou atuação como Desenvolvedor
                                         React.js e Node.js na DpSystem
                                     </p>
-                                    <ChevronsUpDownIcon className="size-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
+                                    <ChevronsUpDownIcon className="hidden md:block size-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
                                 </CollapsibleTrigger>
                                 <CollapsibleContent className="space-y-2">
                                     <TimelineWork name="dpsystemltda" />
@@ -141,11 +140,11 @@ export default function Home() {
                         <Collapsible defaultOpen>
                             <div className="space-y-2">
                                 <CollapsibleTrigger className="flex gap-1 items-center group cursor-pointer w-full">
-                                    <p className="text-base text-foreground group-hover:text-primary font-semibold">
+                                    <p className="text-base text-foreground group-hover:text-primary font-semibold text-left">
                                         Começou a desenvolver projetos em React.js
                                         e Node.js
                                     </p>
-                                    <ChevronsUpDownIcon className="size-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
+                                    <ChevronsUpDownIcon className="hidden md:block size-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
                                 </CollapsibleTrigger>
                                 <CollapsibleContent className="space-y-2">
                                     <TimelineProject name="pimentellima/todo-app" />

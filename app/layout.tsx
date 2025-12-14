@@ -9,6 +9,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ProgressBar, ProgressBarProvider } from "react-transition-progress"
 import "./globals.css"
+import Profile from "@/components/profile"
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -40,60 +41,9 @@ export default function RootLayout({
                         <ProgressBar className="w-full fixed top-0 left-0 right-0 z-50 h-1 bg-primary/50" />
                         <div className="flex min-h-screen flex-col bg-background">
                             <Header />
-                            <div className="flex-1 py-6">
-                                <div className="flex-1 h-full w-6xl mx-auto grid grid-cols-4 gap-6">
-                                    <div className="flex gap-3 flex-col">
-                                        <Image
-                                            src="/image.jpeg"
-                                            alt="Profile photo"
-                                            width={350}
-                                            height={350}
-                                            className="rounded-full ring-2 ring-border"
-                                        />
-                                        <div className="space-y-1">
-                                            <h1 className="text-foreground text-2xl font-bold tracking-tight">
-                                                Matheus Pimentel
-                                            </h1>
-                                            <h2 className="text-muted-foreground tracking-tight text-lg font-medium">
-                                                Desenvolvedor React.js e Node.js
-                                            </h2>
-                                        </div>
-                                        <Link
-                                            href={
-                                                "mailto:matheus_dere@hotmail.com"
-                                            }
-                                        >
-                                            <Button
-                                                className="w-full"
-                                                variant={"secondary"}
-                                            >
-                                                Enviar mensagem
-                                            </Button>
-                                        </Link>
-                                        <Separator />
-                                        <div className="flex flex-col">
-                                            <Link
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                href="https://www.linkedin.com/in/matheus-pimentel-7a427b259/"
-                                            >
-                                                <Button
-                                                    className="text-foreground justify-start pl-0"
-                                                    variant={`link`}
-                                                >
-                                                    <LinkedinIcon />
-                                                    Matheus Pimentel
-                                                </Button>
-                                            </Link>
-                                            <Button
-                                                className="text-foreground justify-start pl-0 cursor-default hover:bg-transparent"
-                                                variant={`ghost`}
-                                            >
-                                                <MapPin />
-                                                Brasil
-                                            </Button>
-                                        </div>
-                                    </div>
+                            <div className="flex-1 py-8">
+                                <div className="flex-1 h-full md:w-312 mx-auto flex flex-col md:grid grid-cols-4 px-4 gap-3 md:gap-6">
+                                    <Profile />
                                     <div className="col-span-3 flex flex-col gap-6">
                                         {children}
                                     </div>

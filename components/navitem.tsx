@@ -7,11 +7,11 @@ import { usePathname } from "next/navigation"
 export default function NavItem({
     icon,
     href,
-    label,
+    children,
 }: {
     icon: React.ReactNode
     href: string
-    label: string
+    children: React.ReactNode
 }) {
     const pathname = usePathname()
     const isActive = pathname === href
@@ -19,13 +19,13 @@ export default function NavItem({
         <div className="flex flex-col gap-1.5">
             <Link href={href}>
                 <Button
-                    size={'sm'}
+                    size={"sm"}
                     data-active={isActive}
                     variant={"ghost"}
                     className="data-[active=true]:font-bold font-medium"
                 >
-                    {icon}
-                    {label}
+                    <span className="text-muted-foreground">{icon}</span>
+                    {children}
                 </Button>
             </Link>
             <div
