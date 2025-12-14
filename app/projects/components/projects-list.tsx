@@ -5,31 +5,42 @@ import { ptBR } from "date-fns/locale/pt-BR"
 import { useQueryState } from "nuqs"
 import { useMemo } from "react"
 
-interface Project {
+export interface Project {
     name: string
     description: string
-    type: string
+    type: "personal" | "freelance" | "contract"
     skills?: string[]
     language: string
     languageColor: string
     date: string
 }
 
+const typeLabels = {
+    personal: "Projeto pessoal",
+    freelance: "Projeto freelance",
+    contract: "Contrato fixo",
+}
+
 export function ProjectsListWithSearch({ projects }: { projects: Project[] }) {
     const [search] = useQueryState("q", { defaultValue: "" })
+    const [filter] = useQueryState("filter", { defaultValue: "" })
+
     const filteredProjects = useMemo(
         () =>
             projects.filter(
                 (project) =>
-                    project.name.toLowerCase().includes(search.toLowerCase()) ||
-                    project.description
+                    (project.name
                         .toLowerCase()
                         .includes(search.toLowerCase()) ||
-                    project.skills?.some((skill) =>
-                        skill.toLowerCase().includes(search.toLowerCase())
-                    )
+                        project.description
+                            .toLowerCase()
+                            .includes(search.toLowerCase()) ||
+                        project.skills?.some((skill) =>
+                            skill.toLowerCase().includes(search.toLowerCase())
+                        )) &&
+                    (filter ? project.type === filter : true)
             ),
-        [projects, search]
+        [projects, search, filter]
     )
 
     return <ProjectsList projects={filteredProjects} />
@@ -48,7 +59,7 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
                             {project.name}
                         </p>
                         <Badge className="h-6" variant={"outline"}>
-                            {project.type}
+                            {typeLabels[project.type]}
                         </Badge>
                     </div>
                     <p className="text-muted-foreground text-sm font-medium mt-2">

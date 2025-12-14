@@ -1,18 +1,20 @@
 import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-import ProjectSearch from "./components/project-search"
-import {
-    ProjectsListWithSearch,
-    ProjectsList,
-} from "./components/projects-list"
-import { Suspense } from "react"
 import { Input } from "@/components/ui/input"
+import { Separator } from "@/components/ui/separator"
+import { Suspense } from "react"
+import ProjectSearch from "./components/project-search"
+import ProjectsFilter from "./components/projects-filter"
+import {
+    Project,
+    ProjectsList,
+    ProjectsListWithSearch,
+} from "./components/projects-list"
 
-const projects = [
+const projects: Project[] = [
     {
         name: "Smulti",
         description: "Downloader de vídeos do YouTube",
-        type: "Projeto freelance",
+        type: "personal",
         skills: ["AWS", "React Router v7", "Vite"],
         language: "TypeScript",
         languageColor: "#3178C6",
@@ -22,7 +24,7 @@ const projects = [
         name: "Chatbot Whatsapp",
         description:
             "Chatbot financeiro para gestão de despesas com IA usando API da Meta",
-        type: "Projeto pessoal",
+        type: "personal",
         skills: ["Meta API", "Nest.js"],
         language: "TypeScript",
         languageColor: "#3178C6",
@@ -32,7 +34,7 @@ const projects = [
         name: "Tradutor de CV",
         description:
             "Gerador de currículos traduzidos com IA a partir de CV em PDF",
-        type: "Projeto freelance",
+        type: "personal",
         skills: ["Next.js", "Drizzle ORM", "OpenAI API"],
         language: "TypeScript",
         languageColor: "#3178C6",
@@ -42,7 +44,7 @@ const projects = [
         name: "Agregador de feeds",
         description:
             "Agregador de feeds de redes sociais em interface personalizada",
-        type: "Projeto pessoal",
+        type: "personal",
         skills: ["Next.js", "Tailwind CSS", "Open API"],
         language: "TypeScript",
         languageColor: "#3178C6",
@@ -52,7 +54,7 @@ const projects = [
         name: "Chatbot de extratos bancários",
         description:
             "Chatbot de análise e geração de gráficos usando IA a partir de extratos bancários",
-        type: "Projeto freelance",
+        type: "personal",
         skills: ["Next.js", "RAG", "Tailwind CSS"],
         language: "TypeScript",
         languageColor: "#3178C6",
@@ -62,7 +64,7 @@ const projects = [
         name: "Econosonar",
         description:
             "Plataforma de geração e análise de eventos econômicos para empresas a partir de notícias",
-        type: "Contrato freelance",
+        type: "freelance",
         language: "TypeScript",
         languageColor: "#3178C6",
         date: "2025-09-23",
@@ -71,7 +73,7 @@ const projects = [
         name: "DpSystem",
         description:
             "Sistema de gestão de clínicas médicas com controle financeiro",
-        type: "Contrato fixo",
+        type: "contract",
         language: "TypeScript",
         languageColor: "#3178C6",
         date: "2023-04-03",
@@ -95,7 +97,15 @@ export default function ProjectsPage() {
                 >
                     <ProjectSearch />
                 </Suspense>
-                <Button variant={"secondary"}>Filtrar por...</Button>
+                <Suspense
+                    fallback={
+                        <Button variant={"secondary"}>
+                            Filtrar por...
+                        </Button>
+                    }
+                >
+                    <ProjectsFilter />
+                </Suspense>
             </div>
             <Separator className="my-3" />
             <Suspense fallback={<ProjectsList projects={sortedProjects} />}>
