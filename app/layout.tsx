@@ -1,15 +1,11 @@
 import Header from "@/components/header"
-import { NuqsAdapter } from "nuqs/adapters/next/app"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-import { LinkedinIcon, MailIcon, MapPin, ShareIcon } from "lucide-react"
+import Profile from "@/components/profile"
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import Image from "next/image"
-import Link from "next/link"
+import { NuqsAdapter } from "nuqs/adapters/next/app"
 import { ProgressBar, ProgressBarProvider } from "react-transition-progress"
 import "./globals.css"
-import Profile from "@/components/profile"
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -36,6 +32,7 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
+                <Analytics />
                 <NuqsAdapter>
                     <ProgressBarProvider>
                         <ProgressBar className="w-full fixed top-0 left-0 right-0 z-50 h-1 bg-primary/50" />
