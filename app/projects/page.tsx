@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import ProjectSearch from "./components/project-search"
-import ProjectsList from "./components/projects-list"
+import {
+    ProjectsListWithSearch,
+    ProjectsList,
+} from "./components/projects-list"
+import { Suspense } from "react"
+import { Input } from "@/components/ui/input"
 
 const projects = [
     {
@@ -77,11 +82,22 @@ export default function ProjectsPage() {
     return (
         <div className="space-y-4">
             <div className="flex gap-2">
-                <ProjectSearch />
+                <Suspense
+                    fallback={
+                        <Input
+                            className="border-border h-8"
+                            placeholder="Buscar projeto..."
+                        />
+                    }
+                >
+                    <ProjectSearch />
+                </Suspense>
                 <Button variant={"secondary"}>Filtrar por...</Button>
             </div>
             <Separator className="my-3" />
-            <ProjectsList projects={projects} />
+            <Suspense fallback={<ProjectsList projects={projects} />}>
+                <ProjectsListWithSearch projects={projects} />
+            </Suspense>
         </div>
     )
 }

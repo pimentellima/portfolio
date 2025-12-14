@@ -15,7 +15,11 @@ interface Project {
     date: string
 }
 
-export default function ProjectsList({ projects }: { projects: Project[] }) {
+export function ProjectsListWithSearch({
+    projects,
+}: {
+    projects: Project[]
+}) {
     const [search] = useQueryState("q", { defaultValue: "" })
     const filteredProjects = useMemo(
         () =>
@@ -39,9 +43,13 @@ export default function ProjectsList({ projects }: { projects: Project[] }) {
         [projects, search]
     )
 
+    return <ProjectsList projects={filteredProjects} />
+}
+
+export function ProjectsList({ projects }: { projects: Project[] }) {
     return (
         <div>
-            {filteredProjects.map((project) => (
+            {projects.map((project) => (
                 <div
                     key={project.name}
                     className="py-4 border-b last:border-b-0"
