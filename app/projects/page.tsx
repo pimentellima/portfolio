@@ -79,6 +79,9 @@ const projects = [
 ]
 
 export default function ProjectsPage() {
+    const sortedProjects = projects.sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    )
     return (
         <div className="space-y-4">
             <div className="flex gap-2">
@@ -95,8 +98,8 @@ export default function ProjectsPage() {
                 <Button variant={"secondary"}>Filtrar por...</Button>
             </div>
             <Separator className="my-3" />
-            <Suspense fallback={<ProjectsList projects={projects} />}>
-                <ProjectsListWithSearch projects={projects} />
+            <Suspense fallback={<ProjectsList projects={sortedProjects} />}>
+                <ProjectsListWithSearch projects={sortedProjects} />
             </Suspense>
         </div>
     )

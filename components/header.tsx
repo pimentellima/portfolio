@@ -1,15 +1,15 @@
 import {
     BookOpen,
     InboxIcon,
-    MailIcon,
     SquareChartGantt,
     SquareCodeIcon,
-    SquareStackIcon,
 } from "lucide-react"
 import { Link } from "react-transition-progress/next"
 import NavItem from "./navitem"
-import { Button } from "./ui/button"
+import NotificationDropdown from "./notification-dropdown"
 import { Badge } from "./ui/badge"
+import { Button } from "./ui/button"
+import { Suspense } from "react"
 
 export default function Header() {
     return (
@@ -20,14 +20,15 @@ export default function Header() {
                         🎯 pimentellima
                     </Button>
                 </Link>
-                <div>
-                    <div className="relative">
+                <Suspense
+                    fallback={
                         <Button variant={"outline"}>
                             <InboxIcon />
                         </Button>
-                        <div className="rounded-full bg-primary h-2 w-2 absolute -right-0.5 -top-0.5" />
-                    </div>
-                </div>
+                    }
+                >
+                    <NotificationDropdown />
+                </Suspense>
             </div>
             <div className="flex items-end ">
                 <NavItem icon={<BookOpen />} href="/">
@@ -35,7 +36,12 @@ export default function Header() {
                 </NavItem>
                 <NavItem icon={<SquareChartGantt />} href="/projects">
                     Projetos
-                    <Badge variant={'secondary'} className="font-bold px-1 py-0">7</Badge>
+                    <Badge
+                        variant={"secondary"}
+                        className="font-bold px-1 py-0"
+                    >
+                        7
+                    </Badge>
                 </NavItem>
                 <NavItem icon={<SquareCodeIcon />} href="/stack">
                     Stack

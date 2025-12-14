@@ -15,31 +15,20 @@ interface Project {
     date: string
 }
 
-export function ProjectsListWithSearch({
-    projects,
-}: {
-    projects: Project[]
-}) {
+export function ProjectsListWithSearch({ projects }: { projects: Project[] }) {
     const [search] = useQueryState("q", { defaultValue: "" })
     const filteredProjects = useMemo(
         () =>
-            projects
-                .filter(
-                    (project) =>
-                        project.name
-                            .toLowerCase()
-                            .includes(search.toLowerCase()) ||
-                        project.description
-                            .toLowerCase()
-                            .includes(search.toLowerCase()) ||
-                        project.skills?.some((skill) =>
-                            skill.toLowerCase().includes(search.toLowerCase())
-                        )
-                )
-                .sort(
-                    (a, b) =>
-                        new Date(b.date).getTime() - new Date(a.date).getTime()
-                ),
+            projects.filter(
+                (project) =>
+                    project.name.toLowerCase().includes(search.toLowerCase()) ||
+                    project.description
+                        .toLowerCase()
+                        .includes(search.toLowerCase()) ||
+                    project.skills?.some((skill) =>
+                        skill.toLowerCase().includes(search.toLowerCase())
+                    )
+            ),
         [projects, search]
     )
 

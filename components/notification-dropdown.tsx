@@ -1,0 +1,48 @@
+"use client"
+import { InboxIcon } from "lucide-react"
+import { Button } from "./ui/button"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "./ui/dropdown-menu"
+import { useEffect, useState } from "react"
+
+export default function NotificationDropdown() {
+    const [open, setOpen] = useState(false)
+    const [notificationRead, setNotificationRead] = useState(true)
+
+    useEffect(() => {
+        const readStatus = localStorage.getItem("notificationRead")
+        setNotificationRead(readStatus === "true")
+    }, [])
+
+    return (
+        <DropdownMenu
+            open={open}
+            onOpenChange={(open) => {
+                setOpen(open)
+                setNotificationRead(true)
+                localStorage.setItem("notificationRead", "true")
+            }}
+        >
+            <div className="relative">
+                <Button asChild variant={"outline"}>
+                    <DropdownMenuTrigger>
+                        <InboxIcon />
+                    </DropdownMenuTrigger>
+                </Button>
+                <div
+                    hidden={notificationRead}
+                    className="rounded-full bg-primary h-2 w-2 absolute -right-0.5 -top-0.5"
+                />
+            </div>
+            <DropdownMenuContent align="end" className="p-2 rounded-lg w-max">
+                <DropdownMenuItem className="focus:bg-secondary/40 bg-secondary/40 focus:text-foreground text-foreground font-semibold">
+                    Matheus Pimentel está disponível para trabalho
+                </DropdownMenuItem>
+            </DropdownMenuContent>
+        </DropdownMenu>
+    )
+}
