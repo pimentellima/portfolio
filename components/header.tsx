@@ -14,11 +14,13 @@ export default function Header() {
     return (
         <nav className="h-26 grid grid-rows-2 flex-col px-10 w-full border-b bg-black">
             <div className="flex items-end justify-between">
-                <div>
+                <div className="flex items-center gap-0.5">
                     <span className="text-xl">🎯</span>
-                    <Button asChild variant={"ghost"}>
-                        <Link href={"/"}> pimentellima</Link>
-                    </Button>
+                    <Link href={"/"}>
+                        <Button size={"sm"} variant={"ghost"}>
+                            pimentellima
+                        </Button>
+                    </Link>
                 </div>
                 <div>
                     <div className="relative">
@@ -41,7 +43,6 @@ export default function Header() {
                     href="/stack"
                     label="Stack"
                 />
-                <NavItem icon={<MailIcon />} href="/contact" label="Contato" />
             </div>
         </nav>
     )

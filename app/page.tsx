@@ -12,7 +12,7 @@ import {
     BrainIcon,
     BriefcaseIcon,
     Folder,
-    GitPullRequest
+    GitPullRequest,
 } from "lucide-react"
 
 export default function Home() {
@@ -30,11 +30,10 @@ export default function Home() {
                     construir e acompanhar as tendências tecnológicas.
                     <br />
                     <br />
-                    Desde 2023, trabalho desenvolvendo aplicações web usando
-                    TypeScript, React.js e Node.js.
-                    <br />
-                    Na minha trajetória, ganhei experiência em design de
-                    interfaces, integração com APIs, automação e IA.
+                    Desde 2023, trabalho desenvolvendo aplicações web usando{" "}
+                    <span className="font-semibold">TypeScript</span>,{" "}
+                    <span className="font-semibold">React.js</span> e{" "}
+                    <span className="font-semibold">Node.js</span>.
                     <br />
                     Também desenvolvo projetos autorais para explorar novas
                     ideias e tecnologias.

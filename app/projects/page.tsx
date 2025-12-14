@@ -34,7 +34,7 @@ const projects = [
         date: "2024-10-31",
     },
     {
-        name: "Agregador de Feeds",
+        name: "Agregador de feeds",
         description:
             "Agregador de feeds de redes sociais em interface personalizada",
         type: "Projeto pessoal",
@@ -44,9 +44,9 @@ const projects = [
         date: "2024-07-11",
     },
     {
-        name: "Chatbot para extratos bancários",
+        name: "Chatbot de extratos bancários",
         description:
-            "Chatbot para análise e geração de gráficos usando IA a partir de extratos bancários",
+            "Chatbot de análise e geração de gráficos usando IA a partir de extratos bancários",
         type: "Projeto freelance",
         skills: ["Next.js", "RAG", "Tailwind CSS"],
         language: "TypeScript",

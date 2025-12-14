@@ -2,7 +2,7 @@ import Header from "@/components/header"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { MailIcon, MapPin } from "lucide-react"
+import { LinkedinIcon, MailIcon, MapPin, ShareIcon } from "lucide-react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import Image from "next/image"
@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-    title: "pimentellima - Dev",
-    description: "Website pessoal de Matheus Pimentel Lima",
+    title: "pimentellima - Desenvolvedor",
+    description: "Portfolio de Matheus Pimentel Lima",
 }
 
 export default function RootLayout({
@@ -58,15 +58,31 @@ export default function RootLayout({
                                                 Desenvolvedor React.js e Node.js
                                             </h2>
                                         </div>
+                                        <Link
+                                            href={
+                                                "mailto:matheus_dere@hotmail.com"
+                                            }
+                                        >
+                                            <Button
+                                                className="w-full"
+                                                variant={"secondary"}
+                                            >
+                                                Enviar mensagem
+                                            </Button>
+                                        </Link>
                                         <Separator />
-                                        <div className="space-y-1">
-                                            <Link href="mailto:matheus_dere@hotmail.com">
+                                        <div className="flex flex-col">
+                                            <Link
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                href="https://www.linkedin.com/in/matheus-pimentel-7a427b259/"
+                                            >
                                                 <Button
                                                     className="text-foreground justify-start pl-0"
                                                     variant={`link`}
                                                 >
-                                                    <MailIcon />
-                                                    matheus_dere@hotmail.com
+                                                    <LinkedinIcon />
+                                                    Matheus Pimentel
                                                 </Button>
                                             </Link>
                                             <Button

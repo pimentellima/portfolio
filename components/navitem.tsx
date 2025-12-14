@@ -22,7 +22,7 @@ export default function NavItem({
                     size={'sm'}
                     data-active={isActive}
                     variant={"ghost"}
-                    className="data-[active=true]:font-semibold font-normal"
+                    className="data-[active=true]:font-bold font-medium"
                 >
                     {icon}
                     {label}
