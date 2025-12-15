@@ -8,10 +8,12 @@ import {
     DropdownMenuTrigger,
 } from "./ui/dropdown-menu"
 import { useEffect, useState } from "react"
+import { useTranslations } from "next-intl"
 
 export default function NotificationDropdown() {
     const [open, setOpen] = useState(false)
     const [notificationRead, setNotificationRead] = useState(true)
+    const t = useTranslations()
 
     useEffect(() => {
         const readStatus = localStorage.getItem("notificationRead")
@@ -40,7 +42,7 @@ export default function NotificationDropdown() {
             </div>
             <DropdownMenuContent align="end" className="p-2 rounded-lg w-max">
                 <DropdownMenuItem className="focus:bg-secondary/40 bg-secondary/40 focus:text-foreground text-foreground font-semibold">
-                    Matheus está disponível para trabalho <CheckIcon />
+                    {t("notification.available")} <CheckIcon />
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>

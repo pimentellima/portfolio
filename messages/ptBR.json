@@ -1,0 +1,115 @@
+
+{
+	"header": {
+		"readme": "pimentellima / README",
+		"ext": ".md"
+	},
+	"about": {
+		"title": "Sobre mim",
+		"p1": "Sou um desenvolvedor full stack brasileiro 🇧🇷 que ama construir e acompanhar as tendências tecnológicas.",
+		"p2": "Desde 2023, trabalho desenvolvendo aplicações web usando",
+		"p3": "Também desenvolvo projetos autorais para explorar novas ideias e tecnologias."
+	},
+	"timeline": {
+		"header": "Trajetória",
+		"econosonar": {
+			"title": "Tech Lead na Econosonar",
+			"activity": {
+				"1": "ajudou a tirar a ideia do papel, desenvolvendo a plataforma de análise de eventos econômicos",
+				"2": "criou o workflow de análise periódica de notícias e agrupamento com IA e métricas personalizadas",
+				"3": "construiu o painel de administradores para visualização das tabelas geradas no banco",
+				"4": "criou o fluxo de onboarding de novos usuários com acesso antecipado"
+			}
+		},
+		"personal": {
+			"title": "Publicou projetos pessoais"
+		},
+		"dpsystem": {
+			"title": "Desenvolvedor na DpSystem",
+			"activity": {
+				"1": "ajudou a construir os módulos de agendamento e consulta, autenticação e permissões",
+				"2": "construiu o fluxo de conciliação bancária e geração de relatório contábil",
+				"3": "desenvolveu o módulo de criação de prontuários dinâmicos e integração com IA",
+				"4": "realizou a integração do sistema com API Meta para envio de notificações via WhatsApp",
+				"5": "participou da migração do sistema de CRA para Vite e TanStack Router"
+			}
+		},
+		"startedProjects": {
+			"title": "Começou a desenvolver projetos em React.js e Node.js"
+		},
+		"startedStudy": {
+			"title": "Deu início ao estudo de APIs REST e ferramentas front-end"
+		},
+		"study": {
+			"course": "Começou o curso de Ciência da Computação na Universidade Federal de Sergipe (Brasil)"
+		}
+	}
+	,
+	"stack": {
+		"title": "Minha stack",
+		"p1": "Atualmente tenho foco no front-end, e venho usando constantemente nos meus projetos a seguinte stack:",
+		"p2": "Escolho React.js pelo suporte da comunidade, Next.js pela rapidez em sair da ideia para v0, Tailwind CSS pelo boost de produtividade, Drizzle ORM por ser leve e flexível, e shadcn/ui por fornecer componentes prontos e personalizáveis.",
+		"alsoWorked": "Também já trabalhei com",
+		"counting": "e contando..."
+	},
+	"projects": {
+		"searchPlaceholder": "Buscar projeto...",
+		"filterButton": "Filtrar por...",
+		"items": {
+			"smulti": {
+				"name": "Smulti",
+				"description": "Downloader de vídeos do YouTube"
+			},
+			"chatbot_whatsapp": {
+				"name": "Chatbot Whatsapp",
+				"description": "Chatbot financeiro para gestão de despesas com IA usando API da Meta"
+			},
+			"tradutor_cv": {
+				"name": "Tradutor de CV",
+				"description": "Gerador de currículos traduzidos com IA a partir de CV em PDF"
+			},
+			"agregador_feeds": {
+				"name": "Agregador de feeds",
+				"description": "Agregador de feeds de redes sociais em interface personalizada"
+			},
+			"chatbot_extratos": {
+				"name": "Chatbot de extratos bancários",
+				"description": "Chatbot de análise e geração de gráficos usando IA a partir de extratos bancários"
+			},
+			"econosonar": {
+				"name": "Econosonar",
+				"description": "Plataforma de geração e análise de eventos econômicos para empresas a partir de notícias"
+			},
+			"dpsystem": {
+				"name": "DpSystem",
+				"description": "Sistema de gestão de clínicas médicas com controle financeiro"
+			}
+		}
+		,
+		"type": {
+			"personal": "Projeto pessoal",
+			"freelance": "Contrato freelance",
+			"contract": "Contrato fixo"
+		},
+		"filterLabel": "Tipo"
+	}
+	,
+	"nav": {
+		"home": "Resumo",
+		"projects": "Projetos",
+		"stack": "Stack"
+	}
+	,
+	"profile": {
+		"name": "Matheus Pimentel",
+		"photoAlt": "Foto de perfil",
+		"role": "Desenvolvedor React.js e Node.js",
+		"sendMessage": "Enviar mensagem",
+		"linkedinLabel": "Matheus Pimentel",
+		"location": "Brasil"
+	}
+	,
+	"notification": {
+		"available": "Matheus está disponível para trabalho"
+	}
+}

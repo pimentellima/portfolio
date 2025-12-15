@@ -7,7 +7,6 @@ import {
     TimelineWork,
     TimelineWorkActivity,
 } from "@/components/timeline"
-import { Button } from "@/components/ui/button"
 import {
     Collapsible,
     CollapsibleContent,
@@ -15,41 +14,38 @@ import {
 } from "@/components/ui/collapsible"
 import { Separator } from "@/components/ui/separator"
 import {
-    ArrowUpDown,
     BookTextIcon,
     BrainIcon,
     BriefcaseIcon,
     ChevronsUpDownIcon,
-    Folder,
-    GitPullRequest,
+    Folder
 } from "lucide-react"
+import { getTranslations } from "next-intl/server"
 
-export default function Home() {
+export default async function Home() {
+    const t = await getTranslations()
     return (
         <div className="contents">
             <div className="rounded-lg border w-full py-6 px-4 text-foreground">
                 <div className="text-xs text-foreground tracking-tight flex font-medium font-mono">
-                    <p>pimentellima / README</p>
-                    <span className="text-muted-foreground">.md</span>
+                    <p>{t("header.readme")}</p>
+                    <span className="text-muted-foreground">{t("header.ext")}</span>
                 </div>
-                <div className="font-bold mt-2 text-xl">Sobre mim</div>
+                <div className="font-bold mt-2 text-xl">{t("about.title")}</div>
                 <Separator className="my-2" />
                 <div className="font-medium text-sm">
-                    Sou um desenvolvedor full stack brasileiro 🇧🇷 que ama
-                    construir e acompanhar as tendências tecnológicas.
+                    {t("about.p1")}
                     <br />
                     <br />
-                    Desde 2023, trabalho desenvolvendo aplicações web usando{" "}
+                    {t("about.p2")} {" "}
                     <span className="font-semibold">TypeScript</span>,{" "}
                     <span className="font-semibold">React.js</span> e{" "}
-                    <span className="font-semibold">Node.js</span>. Também
-                    desenvolvo projetos autorais para explorar novas ideias e
-                    tecnologias.
+                    <span className="font-semibold">Node.js</span>. {t("about.p3")}
                 </div>
             </div>
 
             <div className="container">
-                <TimelineHeader>Trajetória</TimelineHeader>
+                <TimelineHeader>{t("timeline.header")}</TimelineHeader>
                 <TimelineSeparator>2025</TimelineSeparator>
                 <Timeline>
                     <TimelineItem
@@ -61,7 +57,7 @@ export default function Home() {
                                 <div className="flex items-center gap-2">
                                     <CollapsibleTrigger className="flex gap-1 items-center group cursor-pointer w-full">
                                         <p className="text-base text-foreground group-hover:text-primary transition-colors font-semibold text-left">
-                                            Atuou como Tech Lead no Econosonar
+                                            {t("timeline.econosonar.title")}
                                         </p>
                                         <ChevronsUpDownIcon className="hidden md:block size-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
                                     </CollapsibleTrigger>
@@ -72,10 +68,10 @@ export default function Home() {
                                         href="https://www.econosonar.com"
                                         name="econosonar"
                                     />
-                                    <TimelineWorkActivity content="ajudou a tirar a ideia do papel, desenvolvendo a plataforma de análise de eventos econômicos" />
-                                    <TimelineWorkActivity content="criou o workflow de análise periódica de notícias e agrupamento com IA e métricas personalizadas" />
-                                    <TimelineWorkActivity content="construiu o painel de administradores para visualização das tabelas geradas no banco" />
-                                    <TimelineWorkActivity content="criou o fluxo de onbording de novos usuários com acesso antecipado" />
+                                    <TimelineWorkActivity content={t("timeline.econosonar.activity.1")} />
+                                    <TimelineWorkActivity content={t("timeline.econosonar.activity.2")} />
+                                    <TimelineWorkActivity content={t("timeline.econosonar.activity.3")} />
+                                    <TimelineWorkActivity content={t("timeline.econosonar.activity.4")} />
                                 </CollapsibleContent>
                             </div>
                         </Collapsible>
@@ -89,7 +85,7 @@ export default function Home() {
                             <div className="space-y-3">
                                 <CollapsibleTrigger className="flex gap-1 items-center group cursor-pointer w-full">
                                     <p className="text-base text-foreground group-hover:text-primary transition-colors font-semibold text-left">
-                                        Publicou projetos pessoais
+                                        {t("timeline.personal.title")}
                                     </p>
                                     <ChevronsUpDownIcon className="hidden md:block size-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
                                 </CollapsibleTrigger>
@@ -116,18 +112,17 @@ export default function Home() {
                             <div className="space-y-3">
                                 <CollapsibleTrigger className="flex gap-1 items-center group cursor-pointer w-full">
                                     <p className="text-base text-foreground group-hover:text-primary font-semibold text-left">
-                                        Iniciou atuação como Desenvolvedor
-                                        React.js e Node.js na DpSystem
+                                        {t("timeline.dpsystem.title")}
                                     </p>
                                     <ChevronsUpDownIcon className="hidden md:block size-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
                                 </CollapsibleTrigger>
                                 <CollapsibleContent className="space-y-2">
                                     <TimelineWork name="dpsystemltda" />
-                                    <TimelineWorkActivity content="ajudou a construir os módulos de agendamento e consulta, autenticação e permissões" />
-                                    <TimelineWorkActivity content="construiu o fluxo de conciliação bancária e geração de relatório contábil" />
-                                    <TimelineWorkActivity content="desenvolveu o módulo de criação de prontuários dinâmicos e integração com IA" />
-                                    <TimelineWorkActivity content="realizou a integração do sistema com API Meta para envio de notificações via WhatsApp" />
-                                    <TimelineWorkActivity content="participou da migração do sistema de CRA para Vite e TanStack Router" />
+                                    <TimelineWorkActivity content={t("timeline.dpsystem.activity.1")} />
+                                    <TimelineWorkActivity content={t("timeline.dpsystem.activity.2")} />
+                                    <TimelineWorkActivity content={t("timeline.dpsystem.activity.3")} />
+                                    <TimelineWorkActivity content={t("timeline.dpsystem.activity.4")} />
+                                    <TimelineWorkActivity content={t("timeline.dpsystem.activity.5")} />
                                 </CollapsibleContent>
                             </div>
                         </Collapsible>
@@ -144,8 +139,7 @@ export default function Home() {
                             <div className="space-y-2">
                                 <CollapsibleTrigger className="flex gap-1 items-center group cursor-pointer w-full">
                                     <p className="text-base text-foreground group-hover:text-primary font-semibold text-left">
-                                        Começou a desenvolver projetos em
-                                        React.js e Node.js
+                                        {t("timeline.startedProjects.title")}
                                     </p>
                                     <ChevronsUpDownIcon className="hidden md:block size-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
                                 </CollapsibleTrigger>
@@ -162,8 +156,7 @@ export default function Home() {
                         date="Jan 10"
                     >
                         <p className="text-base text-foreground font-semibold">
-                            Deu início ao estudo de APIs REST e ferramentas
-                            front-end
+                            {t("timeline.startedStudy.title")}
                         </p>
                     </TimelineItem>
                 </Timeline>
@@ -176,8 +169,7 @@ export default function Home() {
                     >
                         <div className="space-y-2">
                             <p className="text-base text-foreground font-semibold">
-                                Começou o curso de Ciência da Computação na
-                                Universidade Federal de Sergipe (Brasil)
+                                {t("timeline.study.course")}
                             </p>
                         </div>
                     </TimelineItem>

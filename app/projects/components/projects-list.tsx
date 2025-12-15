@@ -1,9 +1,9 @@
 "use client"
 import { Badge } from "@/components/ui/badge"
-import { formatDistanceToNow } from "date-fns"
-import { ptBR } from "date-fns/locale/pt-BR"
+import { useTranslations } from "next-intl"
 import { useQueryState } from "nuqs"
 import { useMemo } from "react"
+import FormattedDate from "./formatted-date"
 
 export interface Project {
     name: string
@@ -13,12 +13,6 @@ export interface Project {
     language: string
     languageColor: string
     date: string
-}
-
-const typeLabels = {
-    personal: "Projeto pessoal",
-    freelance: "Contrato freelance",
-    contract: "Contrato fixo",
 }
 
 export function ProjectsListWithSearch({ projects }: { projects: Project[] }) {
@@ -47,6 +41,7 @@ export function ProjectsListWithSearch({ projects }: { projects: Project[] }) {
 }
 
 export function ProjectsList({ projects }: { projects: Project[] }) {
+    const t = useTranslations()
     return (
         <div>
             {projects.map((project) => (
@@ -59,7 +54,7 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
                             {project.name}
                         </p>
                         <Badge className="h-6" variant={"outline"}>
-                            {typeLabels[project.type]}
+                            {t(`projects.type.${project.type}`)}
                         </Badge>
                     </div>
                     <p className="text-muted-foreground text-sm font-medium mt-2">
@@ -88,12 +83,7 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
                                 {project.language}
                             </p>
                         </div>
-                        <p className="text-xs text-muted-foreground font-semibold">
-                            {formatDistanceToNow(new Date(project.date), {
-                                addSuffix: true,
-                                locale: ptBR,
-                            })}
-                        </p>
+                        <FormattedDate date={new Date(project.date)} />
                     </div>
                 </div>
             ))}

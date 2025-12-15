@@ -1,14 +1,15 @@
 import { Separator } from "@/components/ui/separator"
+import { getTranslations } from "next-intl/server"
 
-export default function StackPage() {
+export default async function StackPage() {
+    const t = await getTranslations()
     return (
         <div className="rounded-lg border w-full pt-6 px-4 text-foreground">
-            <div className="font-bold text-xl">Minha stack</div>
+            <div className="font-bold text-xl">{t("stack.title")}</div>
             <Separator className="mb-4 mt-2" />
             <div className="font-medium text-sm space-y-4">
                 <p>
-                    Atualmente tenho foco no front-end, e venho usando
-                    constantemente nos meus projetos a seguinte stack:
+                    {t("stack.p1")}
                 </p>
                 <div className="flex flex-col mt-1 gap-1">
                     <div>
@@ -43,13 +44,9 @@ export default function StackPage() {
                     </div>
                 </div>
                 <p>
-                    Escolho React.js pelo suporte da comunidade, Next.js pela
-                    rapidez em sair da ideia para v0, Tailwind CSS pelo boost de
-                    produtividade, Drizzle ORM por ser leve e flexível, e
-                    shadcn/ui por fornecer componentes prontos e
-                    personalizáveis.
+                    {t("stack.p2")}
                 </p>
-                <p>Também já trabalhei com</p>
+                <p>{t("stack.alsoWorked")}</p>
                 <div className="flex flex-col mt-1 gap-1">
                     <div>
                         <span>•</span>{" "}
@@ -100,7 +97,7 @@ export default function StackPage() {
                         </span>
                     </div>
                     <div>
-                        <span>e contando...</span>
+                        <span>{t("stack.counting")}</span>
                     </div>
                 </div>
                 <br />

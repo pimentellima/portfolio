@@ -1,0 +1,116 @@
+
+{
+	"header": {
+		"readme": "pimentellima / README",
+		"ext": ".md"
+	},
+	"about": {
+		"title": "About me",
+		"p1": "I'm a Brazilian full-stack developer 🇧🇷 who loves building and following technology trends.",
+		"p2": "Since 2023 I've been building web applications using",
+		"p3": "I also create personal projects to explore new ideas and technologies."
+	},
+	"timeline": {
+		"header": "Timeline",
+		"econosonar": {
+			"title": "Tech Lead at Econosonar",
+			"activity": {
+				"1": "helped bring the idea to life, developing the platform for economic event analysis",
+				"2": "created a periodic news analysis workflow with AI clustering and custom metrics",
+				"3": "built the admin dashboard for viewing generated database tables",
+				"4": "created the onboarding flow for new users with early access"
+			}
+		},
+		"personal": {
+			"title": "Published personal projects"
+		},
+		"dpsystem": {
+			"title": "Frontend and Backend Developer at DpSystem",
+			"activity": {
+				"1": "helped build scheduling and query modules, authentication and permissions",
+				"2": "implemented bank reconciliation flow and accounting report generation",
+				"3": "developed dynamic records module and AI integrations",
+				"4": "integrated the system with Meta API for WhatsApp notifications",
+				"5": "participated in migrating the CRA system to Vite and TanStack Router"
+			}
+		},
+		"startedProjects": {
+			"title": "Started building React.js and Node.js projects"
+		},
+		"startedStudy": {
+			"title": "Began studying REST APIs and front-end tools"
+		},
+		"study": {
+			"course": "Started a Computer Science degree at the Federal University of Sergipe (Brazil)"
+		}
+	}
+	,
+	"stack": {
+		"title": "My stack",
+		"p1": "Currently I focus on front-end development and I commonly use the following stack in my projects:",
+		"p2": "I choose React.js for community support, Next.js for fast iteration, Tailwind CSS for productivity boosts, Drizzle ORM for being lightweight and flexible, and shadcn/ui for ready-to-use customizable components.",
+		"alsoWorked": "I have also worked with",
+		"counting": "and counting..."
+	},
+	"projects": {
+		"searchPlaceholder": "Search project...",
+		"filterButton": "Filter by...",
+		"items": {
+			"smulti": {
+				"name": "Smulti",
+				"description": "YouTube video downloader"
+			},
+			"chatbot_whatsapp": {
+				"name": "Chatbot Whatsapp",
+				"description": "Financial chatbot for expense management using Meta API and AI"
+			},
+			"tradutor_cv": {
+				"name": "CV Translator",
+				"description": "Generates translated resumes from PDF CVs using AI"
+			},
+			"agregador_feeds": {
+				"name": "Feeds Aggregator",
+				"description": "Aggregates social feeds into a custom interface"
+			},
+			"chatbot_extratos": {
+				"name": "Bank Statement Chatbot",
+				"description": "Analyzes bank statements and generates charts using AI"
+			},
+			"econosonar": {
+				"name": "Econosonar",
+				"description": "Platform for generating and analyzing economic events from news"
+			},
+			"dpsystem": {
+				"name": "DpSystem",
+				"description": "Clinic management system with financial control"
+			}
+		}
+		,
+		"type": {
+			"personal": "Personal project",
+			"freelance": "Freelance contract",
+			"contract": "Contract"
+		},
+		"filterLabel": "Type"
+	}
+	,
+	"nav": {
+		"home": "Overview",
+		"projects": "Projects",
+		"stack": "Stack"
+	}
+	,
+	"profile": {
+		"name": "Matheus Pimentel",
+		"photoAlt": "Profile photo",
+		"role": "React.js and Node.js Developer",
+		"sendMessage": "Send message",
+		"linkedinLabel": "Matheus Pimentel",
+		"location": "Brazil"
+	}
+	,
+	"notification": {
+		"available": "Matheus is open to work"
+	}
+}
+

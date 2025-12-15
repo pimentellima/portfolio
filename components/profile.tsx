@@ -3,30 +3,32 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "./ui/button"
 import { Separator } from "./ui/separator"
+import { getTranslations } from "next-intl/server"
 
-export default function Profile() {
+export default async function Profile() {
+    const t = await getTranslations()
     return (
         <div className="flex gap-3 flex-col">
             <div className="flex gap-3 md:flex-col">
                 <Image
                     src="/image.jpg"
-                    alt="Profile photo"
+                    alt={t("profile.photoAlt")}
                     width={350}
                     height={350}
                     className="rounded-full ring-2 ring-border h-16 w-16 md:h-72 md:w-72 object-cover object-top"
                 />
                 <div className="md:space-y-1">
                     <h1 className="text-foreground text-2xl font-bold tracking-tight">
-                        Matheus Pimentel
+                        {t("profile.name")}
                     </h1>
                     <h2 className="text-muted-foreground tracking-tight text-lg font-medium">
-                        Desenvolvedor React.js e Node.js
+                        {t("profile.role")}
                     </h2>
                 </div>
             </div>
             <Link href={"mailto:matheus_dere@hotmail.com"}>
                 <Button className="w-full" variant={"secondary"}>
-                    Enviar mensagem
+                    {t("profile.sendMessage")}
                 </Button>
             </Link>
             <Separator />
@@ -41,7 +43,7 @@ export default function Profile() {
                         variant={`link`}
                     >
                         <LinkedinIcon />
-                        Matheus Pimentel
+                        {t("profile.linkedinLabel")}
                     </Button>
                 </Link>
                 <Button
@@ -49,7 +51,7 @@ export default function Profile() {
                     variant={`ghost`}
                 >
                     <MapPin />
-                    Brasil
+                    {t("profile.location")}
                 </Button>
             </div>
         </div>

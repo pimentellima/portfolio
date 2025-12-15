@@ -9,81 +9,77 @@ import {
     ProjectsList,
     ProjectsListWithSearch,
 } from "./components/projects-list"
+import { getTranslations } from "next-intl/server"
 
-const projects: Project[] = [
-    {
-        name: "Smulti",
-        description: "Downloader de vídeos do YouTube",
-        type: "personal",
-        skills: ["AWS", "React Router v7", "Vite"],
-        language: "TypeScript",
-        languageColor: "#3178C6",
-        date: "2025-10-24",
-    },
-    {
-        name: "Chatbot Whatsapp",
-        description:
-            "Chatbot financeiro para gestão de despesas com IA usando API da Meta",
-        type: "personal",
-        skills: ["Meta API", "Nest.js"],
-        language: "TypeScript",
-        languageColor: "#3178C6",
-        date: "2025-04-06",
-    },
-    {
-        name: "Tradutor de CV",
-        description:
-            "Gerador de currículos traduzidos com IA a partir de CV em PDF",
-        type: "personal",
-        skills: ["Next.js", "Drizzle ORM", "OpenAI API"],
-        language: "TypeScript",
-        languageColor: "#3178C6",
-        date: "2024-10-31",
-    },
-    {
-        name: "Agregador de feeds",
-        description:
-            "Agregador de feeds de redes sociais em interface personalizada",
-        type: "personal",
-        skills: ["Next.js", "Tailwind CSS", "Open API"],
-        language: "TypeScript",
-        languageColor: "#3178C6",
-        date: "2024-07-11",
-    },
-    {
-        name: "Chatbot de extratos bancários",
-        description:
-            "Chatbot de análise e geração de gráficos usando IA a partir de extratos bancários",
-        type: "personal",
-        skills: ["Next.js", "RAG", "Tailwind CSS"],
-        language: "TypeScript",
-        languageColor: "#3178C6",
-        date: "2024-07-22",
-    },
-    {
-        name: "Econosonar",
-        description:
-            "Plataforma de geração e análise de eventos econômicos para empresas a partir de notícias",
-        type: "freelance",
-        language: "TypeScript",
-        languageColor: "#3178C6",
-        date: "2025-09-23",
-    },
-    {
-        name: "DpSystem",
-        description:
-            "Sistema de gestão de clínicas médicas com controle financeiro",
-        type: "contract",
-        language: "TypeScript",
-        languageColor: "#3178C6",
-        date: "2023-04-03",
-    },
-]
-
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+    const t = await getTranslations()
+    const projects: Project[] = [
+        {
+            name: t("projects.items.smulti.name"),
+            description: t("projects.items.smulti.description"),
+            type: "personal",
+            skills: ["AWS", "React Router v7", "Vite"],
+            language: "TypeScript",
+            languageColor: "#3178C6",
+            date: "2025-10-24",
+        },
+        {
+            name: t("projects.items.chatbot_whatsapp.name"),
+            description: t("projects.items.chatbot_whatsapp.description"),
+            type: "personal",
+            skills: ["Meta API", "Nest.js"],
+            language: "TypeScript",
+            languageColor: "#3178C6",
+            date: "2025-04-06",
+        },
+        {
+            name: t("projects.items.tradutor_cv.name"),
+            description: t("projects.items.tradutor_cv.description"),
+            type: "personal",
+            skills: ["Next.js", "Drizzle ORM", "OpenAI API"],
+            language: "TypeScript",
+            languageColor: "#3178C6",
+            date: "2024-10-31",
+        },
+        {
+            name: t("projects.items.agregador_feeds.name"),
+            description: t("projects.items.agregador_feeds.description"),
+            type: "personal",
+            skills: ["Next.js", "Tailwind CSS", "Open API"],
+            language: "TypeScript",
+            languageColor: "#3178C6",
+            date: "2024-07-11",
+        },
+        {
+            name: t("projects.items.chatbot_extratos.name"),
+            description: t("projects.items.chatbot_extratos.description"),
+            type: "personal",
+            skills: ["Next.js", "RAG", "Tailwind CSS"],
+            language: "TypeScript",
+            languageColor: "#3178C6",
+            date: "2024-07-22",
+        },
+        {
+            name: t("projects.items.econosonar.name"),
+            description: t("projects.items.econosonar.description"),
+            type: "freelance",
+            language: "TypeScript",
+            languageColor: "#3178C6",
+            date: "2025-09-23",
+        },
+        {
+            name: t("projects.items.dpsystem.name"),
+            description: t("projects.items.dpsystem.description"),
+            type: "contract",
+            language: "TypeScript",
+            languageColor: "#3178C6",
+            date: "2023-04-03",
+        },
+    ]
     const sortedProjects = projects.sort(
         (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
     )
+
     return (
         <div className="space-y-4">
             <div className="flex gap-2">
@@ -91,7 +87,7 @@ export default function ProjectsPage() {
                     fallback={
                         <Input
                             className="border-border h-8"
-                            placeholder="Buscar projeto..."
+                            placeholder={t("projects.searchPlaceholder")}
                         />
                     }
                 >
@@ -100,7 +96,7 @@ export default function ProjectsPage() {
                 <Suspense
                     fallback={
                         <Button variant={"secondary"}>
-                            Filtrar por...
+                            {t("projects.filterButton")}
                         </Button>
                     }
                 >

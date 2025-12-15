@@ -10,14 +10,16 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useQueryState } from "nuqs"
+import { useTranslations } from "next-intl"
 
 const filters = [
-    { label: "Projeto pessoal", value: "personal" },
-    { label: "Contrato freelance", value: "freelance" },
-    { label: "Contrato fixo", value: "contract" },
+    { value: "personal" },
+    { value: "freelance" },
+    { value: "contract" },
 ]
 
 export default function ProjectsFilter() {
+    const t = useTranslations()
     const [filter, setFilter] = useQueryState("filter", { defaultValue: "" })
     const onSelectFilter = (value: string) => {
         setFilter(value)
@@ -25,10 +27,10 @@ export default function ProjectsFilter() {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant={"secondary"}>Filtrar por...</Button>
+                <Button variant={"secondary"}>{t("projects.filterButton")}</Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-44">
-                <DropdownMenuLabel>Tipo</DropdownMenuLabel>
+                <DropdownMenuLabel>{t("projects.filterLabel")}</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {filters.map((item) => (
                     <DropdownMenuCheckboxItem
@@ -36,7 +38,7 @@ export default function ProjectsFilter() {
                         checked={filter === item.value}
                         onCheckedChange={() => onSelectFilter(filter === item.value ? "" : item.value)}
                     >
-                        {item.label}
+                        {t(`projects.type.${item.value}`)}
                     </DropdownMenuCheckboxItem>
                 ))}
             </DropdownMenuContent>
