@@ -3,7 +3,6 @@ import { headers } from "next/headers"
 
 export default getRequestConfig(async () => {
     const acceptLanguage = (await headers()).get("accept-language")
-    console.log("Accept-Language:", acceptLanguage)
     let locale = "en"
 
     if (acceptLanguage?.startsWith("pt")) {
