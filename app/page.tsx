@@ -25,7 +25,7 @@ import { getTranslations } from "next-intl/server"
 export default async function Home() {
     const t = await getTranslations()
     return (
-        <div className="contents">
+        <main className="contents">
             <div className="rounded-lg border w-full py-6 px-4 text-foreground">
                 <div className="text-xs text-foreground tracking-tight flex font-medium font-mono">
                     <p>{t("header.readme")}</p>
@@ -175,6 +175,6 @@ export default async function Home() {
                     </TimelineItem>
                 </Timeline>
             </div>
-        </div>
+        </main>
     )
 }

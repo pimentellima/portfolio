@@ -4,7 +4,7 @@ import { getTranslations } from "next-intl/server"
 export default async function StackPage() {
     const t = await getTranslations()
     return (
-        <div className="rounded-lg border w-full pt-6 px-4 text-foreground">
+        <main className="rounded-lg border w-full pt-6 px-4 text-foreground">
             <div className="font-bold text-xl">{t("stack.title")}</div>
             <Separator className="mb-4 mt-2" />
             <div className="font-medium text-sm space-y-4">
@@ -102,6 +102,6 @@ export default async function StackPage() {
                 </div>
                 <br />
             </div>
-        </div>
+        </main>
     )
 }

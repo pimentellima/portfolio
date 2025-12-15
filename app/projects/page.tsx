@@ -81,7 +81,7 @@ export default async function ProjectsPage() {
     )
 
     return (
-        <div className="space-y-4">
+        <main className="space-y-4">
             <div className="flex gap-2">
                 <Suspense
                     fallback={
@@ -107,6 +107,6 @@ export default async function ProjectsPage() {
             <Suspense fallback={<ProjectsList projects={sortedProjects} />}>
                 <ProjectsListWithSearch projects={sortedProjects} />
             </Suspense>
-        </div>
+        </main>
     )
 }
