@@ -50,7 +50,7 @@ export default async function Home() {
                 <Timeline>
                     <TimelineItem
                         icon={<BriefcaseIcon className="h-4 w-4" />}
-                        date="Set 23"
+                        date="2025/09/23"
                     >
                         <Collapsible defaultOpen>
                             <div className="space-y-3">
@@ -78,7 +78,7 @@ export default async function Home() {
                     </TimelineItem>
                     <TimelineItem
                         icon={<Folder className="h-4 w-4" />}
-                        date="Fev 20"
+                        date="2025/02/20"
                         isLast
                     >
                         <Collapsible defaultOpen>
@@ -105,7 +105,7 @@ export default async function Home() {
                 <Timeline>
                     <TimelineItem
                         icon={<BriefcaseIcon className="h-4 w-4" />}
-                        date="Abr 3"
+                        date="2023/04/03"
                         isLast
                     >
                         <Collapsible defaultOpen>
@@ -133,7 +133,7 @@ export default async function Home() {
                 <Timeline>
                     <TimelineItem
                         icon={<Folder className="h-4 w-4" />}
-                        date="Fev 17"
+                        date="2022/02/17"
                     >
                         <Collapsible defaultOpen>
                             <div className="space-y-2">
@@ -153,7 +153,7 @@ export default async function Home() {
                     <TimelineItem
                         isLast
                         icon={<BrainIcon className="h-4 w-4" />}
-                        date="Jan 10"
+                        date="2022/01/10"
                     >
                         <p className="text-base text-foreground font-semibold">
                             {t("timeline.startedStudy.title")}
@@ -165,7 +165,7 @@ export default async function Home() {
                     <TimelineItem
                         isLast
                         icon={<BookTextIcon className="h-4 w-4" />}
-                        date="Jun 14"
+                        date="2021/03/15"
                     >
                         <div className="space-y-2">
                             <p className="text-base text-foreground font-semibold">

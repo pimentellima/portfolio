@@ -1,3 +1,5 @@
+"use client"
+
 import { useNow, useFormatter } from "next-intl"
 
 export default function FormattedDate({ date }: { date: Date }) {

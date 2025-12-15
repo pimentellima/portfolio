@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { GitBranch, GitCommit, Folder, GitPullRequest } from "lucide-react"
 import { Separator } from "./ui/separator"
 import Link from "next/link"
+import TimelineDate from "./timeline-date"
 
 export interface TimelineItemProps {
     icon?: React.ReactNode
@@ -34,9 +35,7 @@ export function TimelineItem({
             <div className="flex flex-1 items-start justify-between gap-4">
                 <div className="flex-1">{children}</div>
                 {date && (
-                    <time className="shrink-0 text-sm text-muted-foreground">
-                        {date}
-                    </time>
+                   <TimelineDate date={new Date(date)} />
                 )}
             </div>
         </div>
