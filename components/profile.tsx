@@ -1,4 +1,4 @@
-import { LinkedinIcon, MapPin } from "lucide-react"
+import { GithubIcon, LinkedinIcon, MapPin } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "./ui/button"
@@ -35,6 +35,19 @@ export default async function Profile() {
             </Link>
             <Separator />
             <div className="flex flex-col">
+                 <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.github.com/pimentellima"
+                >
+                    <Button
+                        className="text-foreground justify-start pl-0"
+                        variant={`link`}
+                    >
+                        <GithubIcon />
+                        pimentellima
+                    </Button>
+                </Link>
                 <Link
                     target="_blank"
                     rel="noopener noreferrer"
