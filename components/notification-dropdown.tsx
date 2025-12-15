@@ -1,5 +1,5 @@
 "use client"
-import { InboxIcon } from "lucide-react"
+import { CheckIcon, InboxIcon } from "lucide-react"
 import { Button } from "./ui/button"
 import {
     DropdownMenu,
@@ -28,7 +28,7 @@ export default function NotificationDropdown() {
             }}
         >
             <div className="relative">
-                <Button size={'icon-sm'} asChild variant={"outline"}>
+                <Button size={"icon-sm"} asChild variant={"outline"}>
                     <DropdownMenuTrigger>
                         <InboxIcon />
                     </DropdownMenuTrigger>
@@ -40,7 +40,7 @@ export default function NotificationDropdown() {
             </div>
             <DropdownMenuContent align="end" className="p-2 rounded-lg w-max">
                 <DropdownMenuItem className="focus:bg-secondary/40 bg-secondary/40 focus:text-foreground text-foreground font-semibold">
-                    Matheus está disponível para trabalho
+                    Matheus está disponível para trabalho <CheckIcon />
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
