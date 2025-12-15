@@ -15,6 +15,8 @@ export default async function Profile() {
                     alt={t("profile.photoAlt")}
                     width={350}
                     height={350}
+                    loading="eager"
+                    fetchPriority="high"
                     className="rounded-full ring-2 ring-border h-16 w-16 md:h-72 md:w-72 object-cover object-top"
                 />
                 <div className="md:space-y-1">
