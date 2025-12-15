@@ -1,16 +1,16 @@
 "use client"
-import { CheckIcon, InboxIcon } from "lucide-react"
-import { Button } from "./ui/button"
+import { CheckIcon } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { useEffect, useState } from "react"
+import { NotificationButton } from "./notification-button"
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "./ui/dropdown-menu"
-import { useEffect, useState } from "react"
-import { useTranslations } from "next-intl"
 
-export default function NotificationDropdown() {
+export function NotificationDropdown() {
     const [open, setOpen] = useState(false)
     const [notificationRead, setNotificationRead] = useState(true)
     const t = useTranslations()
@@ -30,11 +30,9 @@ export default function NotificationDropdown() {
             }}
         >
             <div className="relative">
-                <Button size={"icon-sm"} asChild variant={"outline"}>
-                    <DropdownMenuTrigger>
-                        <InboxIcon />
-                    </DropdownMenuTrigger>
-                </Button>
+                <DropdownMenuTrigger asChild>
+                    <NotificationButton />
+                </DropdownMenuTrigger>
                 <div
                     hidden={notificationRead}
                     className="rounded-full bg-primary h-2 w-2 absolute -right-0.5 -top-0.5"

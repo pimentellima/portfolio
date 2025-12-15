@@ -2,11 +2,13 @@ import { BookOpen, BoxIcon, InboxIcon, Table2Icon } from "lucide-react"
 import { Suspense } from "react"
 import { Link } from "react-transition-progress/next"
 import NavItem from "./navitem"
-import NotificationDropdown from "./notification-dropdown"
+import { NotificationDropdown } from "./notification-dropdown"
 import { Badge } from "./ui/badge"
 import { Button } from "./ui/button"
-import ToggleThemeButton from "./toggle-theme-button"
+import { ToggleTheme } from "./toggle-theme"
 import { getTranslations } from "next-intl/server"
+import { NotificationButton } from "./notification-button"
+import { ToggleThemeButton } from "./toggle-theme-button"
 
 export default async function Header() {
     const t = await getTranslations()
@@ -18,18 +20,19 @@ export default async function Header() {
                         🎯 pimentellima
                     </Button>
                 </Link>
-                <Suspense
-                    fallback={
-                        <Button variant={"outline"}>
-                            <InboxIcon />
-                        </Button>
-                    }
-                >
-                    <div className="flex gap-1">
-                        <ToggleThemeButton />
+                <div className="flex gap-1">
+                    <Suspense
+                        fallback={
+                            <>
+                                <ToggleThemeButton theme="dark" />
+                                <NotificationButton />
+                            </>
+                        }
+                    >
+                        <ToggleTheme />
                         <NotificationDropdown />
-                    </div>
-                </Suspense>
+                    </Suspense>
+                </div>
             </div>
             <div className="flex items-end ">
                 <NavItem icon={<BookOpen />} href="/">

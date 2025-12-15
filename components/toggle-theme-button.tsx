@@ -1,28 +1,18 @@
-"use client"
-
-import { useTheme } from "next-themes"
-import { Button } from "./ui/button"
 import { MoonIcon, SunIcon } from "lucide-react"
-import { useEffect, useState } from "react"
+import { ComponentProps } from "react"
+import { Button } from "./ui/button"
 
-export default function ToggleThemeButton() {
-    const { theme, setTheme } = useTheme()
-
-    const [isMounted, setIsMounted] = useState(false)
-    useEffect(() => {
-        setIsMounted(true)
-    }, [])
-
-    if (!isMounted) {
-        return null
-    }
-    
-    const toggleTheme = () => {
-        setTheme(theme === "dark" ? "light" : "dark")
-    }
-
+export function ToggleThemeButton({
+    theme,
+    ...props
+}: ComponentProps<typeof Button> & { theme: string }) {
     return (
-        <Button size={"icon-sm"} variant={"outline"} onClick={toggleTheme}>
+        <Button
+            aria-label="toggle-theme-button"
+            size={"icon-sm"}
+            variant={"outline"}
+            {...props}
+        >
             {theme === "dark" ? <MoonIcon /> : <SunIcon />}
         </Button>
     )
