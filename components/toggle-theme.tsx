@@ -13,12 +13,24 @@ export function ToggleTheme() {
     }, [])
 
     if (!isMounted) {
-        return null
+        return <ToggleThemeButton theme="dark" />
     }
+
+    const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+    ).matches
+
+    const resolvedTheme = theme
+        ? theme === "system"
+            ? prefersDark
+                ? "dark"
+                : "light"
+            : theme
+        : "light"
 
     const toggleTheme = () => {
-        setTheme(theme === "dark" ? "light" : "dark")
+        setTheme(resolvedTheme === "dark" ? "light" : "dark")
     }
 
-    return <ToggleThemeButton onClick={toggleTheme} theme={theme || "dark"} />
+    return <ToggleThemeButton onClick={toggleTheme} theme={resolvedTheme} />
 }
