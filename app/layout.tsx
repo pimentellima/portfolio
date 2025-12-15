@@ -1,4 +1,5 @@
 import Header from "@/components/header"
+import { ThemeProvider } from "@/components/theme-provider"
 import Profile from "@/components/profile"
 import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next"
@@ -28,27 +29,34 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en">
+        <html suppressHydrationWarning lang="en">
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
                 <Analytics />
-                <NuqsAdapter>
-                    <ProgressBarProvider>
-                        <ProgressBar className="w-full fixed top-0 left-0 right-0 z-50 h-1 bg-primary/50" />
-                        <div className="flex min-h-screen flex-col bg-background">
-                            <Header />
-                            <div className="flex-1 py-6">
-                                <div className="flex-1 h-full md:w-312 mx-auto flex flex-col md:grid grid-cols-4 px-4 gap-3 md:gap-6">
-                                    <Profile />
-                                    <div className="col-span-3 flex flex-col gap-6">
-                                        {children}
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="system"
+                    enableSystem
+                    disableTransitionOnChange
+                >
+                    <NuqsAdapter>
+                        <ProgressBarProvider>
+                            <ProgressBar className="w-full fixed top-0 left-0 right-0 z-50 h-1 bg-primary/50" />
+                            <div className="flex min-h-screen flex-col bg-background">
+                                <Header />
+                                <div className="flex-1 py-6">
+                                    <div className="flex-1 h-full md:w-312 mx-auto flex flex-col md:grid grid-cols-4 px-4 gap-3 md:gap-6">
+                                        <Profile />
+                                        <div className="col-span-3 flex flex-col gap-6">
+                                            {children}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </ProgressBarProvider>
-                </NuqsAdapter>
+                        </ProgressBarProvider>
+                    </NuqsAdapter>
+                </ThemeProvider>
             </body>
         </html>
     )
