@@ -17,7 +17,7 @@ export interface Project {
 
 const typeLabels = {
     personal: "Projeto pessoal",
-    freelance: "Projeto freelance",
+    freelance: "Contrato freelance",
     contract: "Contrato fixo",
 }
 

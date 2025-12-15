@@ -13,7 +13,7 @@ import { useQueryState } from "nuqs"
 
 const filters = [
     { label: "Projeto pessoal", value: "personal" },
-    { label: "Projeto freelance", value: "freelance" },
+    { label: "Contrato freelance", value: "freelance" },
     { label: "Contrato fixo", value: "contract" },
 ]
 
