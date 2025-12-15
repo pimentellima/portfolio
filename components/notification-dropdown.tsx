@@ -28,7 +28,7 @@ export default function NotificationDropdown() {
             }}
         >
             <div className="relative">
-                <Button asChild variant={"outline"}>
+                <Button size={'icon-sm'} asChild variant={"outline"}>
                     <DropdownMenuTrigger>
                         <InboxIcon />
                     </DropdownMenuTrigger>

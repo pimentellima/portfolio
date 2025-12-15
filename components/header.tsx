@@ -1,8 +1,10 @@
 import {
     BookOpen,
+    BoxIcon,
     InboxIcon,
     SquareChartGantt,
     SquareCodeIcon,
+    Table2Icon,
 } from "lucide-react"
 import { Link } from "react-transition-progress/next"
 import NavItem from "./navitem"
@@ -34,7 +36,7 @@ export default function Header() {
                 <NavItem icon={<BookOpen />} href="/">
                     Resumo
                 </NavItem>
-                <NavItem icon={<SquareChartGantt />} href="/projects">
+                <NavItem icon={<Table2Icon />} href="/projects">
                     Projetos
                     <Badge
                         variant={"secondary"}
@@ -43,7 +45,7 @@ export default function Header() {
                         7
                     </Badge>
                 </NavItem>
-                <NavItem icon={<SquareCodeIcon />} href="/stack">
+                <NavItem icon={<BoxIcon />} href="/stack">
                     Stack
                 </NavItem>
             </div>
